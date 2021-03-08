@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreateServiceLandlineTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('service_landline', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('lastname');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->boolean('admin')->default(false);
-            $table->softDeletes();
-            $table->rememberToken();
+            $table->string('description');
+            $table->string('id_created_by');
+            $table->integer('phone_number')->unique();
+            $table->float('price');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('service_landline');
     }
 }
