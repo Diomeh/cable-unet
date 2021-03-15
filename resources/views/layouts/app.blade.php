@@ -7,6 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- Current route --}}
+    <meta name="routeName" content="{{ Route::currentRouteName() }}">
+
     <title>{{ config('app.name', 'Cable UNET') }}</title>
 
     <!-- Scripts -->
@@ -17,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?v=' . time()) }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

@@ -15,6 +15,7 @@ class CreatePackagesTable extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('id_service_cable');
             $table->string('id_service_internet');
             $table->string('id_service_landline');
