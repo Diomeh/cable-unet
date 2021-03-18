@@ -9,6 +9,15 @@ Se desarrolla el proyecto con:
 * [Laravel 7.0](https://laravel.com/docs/7.x/).
 * [XAMPP](https://www.apachefriends.org/index.html).
 
+Las migraciones de la DB se inicializan con un usuario un admin
+```
+user: admin@email.com
+pass: admin
+
+user: user@email.com
+pass: user
+```
+
 ## **Configuración**
 
 Se configuró un virtual host para el servidor local apache y un mapeo de dirección IP a host name, de esta forma se accede al sitio local mediante `{http://cunet.meme}` en lugar de `localhost/{PROJECT_NAME}/public`, evitando problemas de routing que puedan surgir al momento de acceder al sitio. 
