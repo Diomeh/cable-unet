@@ -19,7 +19,6 @@ class CreateServiceCableTable extends Migration
             $table->string('description');
             $table->string('id_created_by');
             $table->integer('max_num_channels');
-            $table->integer('type');
             $table->float('price');
             $table->timestamps();
         });

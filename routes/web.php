@@ -30,11 +30,18 @@ Route::prefix('/admin')->group(function () {
     // Package management
     Route::get('/packages', 'Admin\PackageController@index')->name('packages');
     Route::get('/packages/create', 'Admin\PackageController@create')->name('packages');
+
+    // Service management
+    Route::get('/services', 'Admin\ServiceController@index')->name('services');
+    Route::get('/services/create/{service}', 'Admin\ServiceController@create')->name('create');
+    Route::post('/services/create/{service}', 'Admin\ServiceController@create_post')->name('create');
+    
+    Route::get('/services/update/{service}/{id}', 'Admin\ServiceController@update')->name('update');
+    Route::post('/services/update/{service}/{id}', 'Admin\ServiceController@update_post')->name('update');
 });
 
 Route::prefix('/user')->group(function() {
     Route::get('/{id}/billing', 'User\BillController@index')->name('billing');
 });
 
-Route::view('/', 'welcome');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

@@ -19,9 +19,6 @@ class CreateServiceInternetTable extends Migration
             $table->string('description');
             $table->string('id_created_by');
             $table->float('bandwidth');
-            $table->float('up_speed');
-            $table->float('down_speed');
-            $table->integer('type');
             $table->float('price');
             $table->timestamps();
         });
